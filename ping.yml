@@ -1,0 +1,19 @@
+---
+- hosts: all
+  gather_facts: true
+  connection: local
+
+  tasks:
+    - name: Crear/Actualizar usuario {{ usermd1 }}
+      ios_config:
+        lines: username {{ usermd1 }} privilege {{ privilegio }} secret 0  {{ new_password1 }}
+
+    - name: Crear/Actualizar usuario {{ usermd2 }}
+      ios_config:
+        lines: username {{ usermd2 }} privilege {{ privilegio }} secret 0  {{ new_password2 }}
+
+
+    - name: Crear/Actualizar usuario {{ usermd3 }}
+      ios_config:
+        lines: username {{ usermd3 }} privilege {{ privilegio }} secret 0  {{ new_password3 }}
+...
